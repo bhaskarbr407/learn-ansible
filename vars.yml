@@ -32,3 +32,13 @@
     URL_PLAY: play.example.com
   roles:
     - sample
+
+- name: Demo on register variables
+  hosts: all
+  tasks:
+    - name: Run uptime shell command
+      ansible.builtin.shell: uptime
+      register: output
+    - name: Print output
+      ansible.builtin.debug:
+        msg: '{{ output.stdout }}'
