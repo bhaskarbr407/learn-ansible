@@ -15,8 +15,7 @@
     - name: print URL
       ansible.builtin.debug:
         msg: URL - {{ URL }}
-
-
+#vars_file does not support from task level
 
 - name: demo on task level variables
   hosts: all
